@@ -1,0 +1,43 @@
+@apiEndpoint = http://localhost:3000
+
+// Get all tasks
+GET {{apiEndpoint}}/tasks
+
+###
+
+// Get task by ID
+@taskId = 7eaffe60-cb65-11ea-be38-877ce96240ee
+GET {{apiEndpoint}}/tasks/{{taskId}}
+
+###
+
+// Create a task
+@taskTitle = My task again
+@taskDecription = Task description
+POST {{apiEndpoint}}/tasks
+Content-Type: application/json
+
+{
+  "title": "{{taskTitle}}",
+  "description": "{{taskDecription}}"
+}
+
+###
+
+// Delete a task
+@taskDeleteId = 8e6c9e80-cb65-11ea-be38-877ce96240ee
+
+DELETE {{apiEndpoint}}/tasks/{{taskDeleteId}}
+
+###
+
+// Update task status
+@taskIdForUpdate = 7650a200-cb66-11ea-a293-bba59474e4fb
+@taskStatus = IN_PROGRESS
+
+PATCH {{apiEndpoint}}/tasks/{{taskIdForUpdate}}/status
+Content-Type: application/json
+
+{
+  "status": "{{taskStatus}}"
+}
