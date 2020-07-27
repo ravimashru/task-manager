@@ -47,3 +47,18 @@ Content-Type: application/json
 // Search
 
 GET {{apiEndpoint}}/tasks?status=OPEN&searchTerm=Task
+
+
+
+
+###
+
+// User sign up
+
+POST {{apiEndpoint}}/auth/signup
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "Welcome1!"
+}
