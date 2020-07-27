@@ -6,14 +6,14 @@ GET {{apiEndpoint}}/tasks
 ###
 
 // Get task by ID
-@taskId = 7eaffe60-cb65-11ea-be38-877ce96240ee
+@taskId = 1
 GET {{apiEndpoint}}/tasks/{{taskId}}
 
 ###
 
 // Create a task
-@taskTitle = My task again
-@taskDecription = Task description
+@taskTitle = My task
+@taskDecription = Task desc
 POST {{apiEndpoint}}/tasks
 Content-Type: application/json
 
@@ -25,14 +25,14 @@ Content-Type: application/json
 ###
 
 // Delete a task
-@taskDeleteId = 8e6c9e80-cb65-11ea-be38-877ce96240ee
+@taskDeleteId = 2
 
 DELETE {{apiEndpoint}}/tasks/{{taskDeleteId}}
 
 ###
 
 // Update task status
-@taskIdForUpdate = 7650a200-cb66-11ea-a293-bba59474e4fb
+@taskIdForUpdate = 1
 @taskStatus = IN_PROGRESS
 
 PATCH {{apiEndpoint}}/tasks/{{taskIdForUpdate}}/status
