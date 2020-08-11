@@ -2,19 +2,25 @@
 
 // Get all tasks
 GET {{apiEndpoint}}/tasks
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyMSIsImlhdCI6MTU5NzE2NjgyNSwiZXhwIjoxNTk3MTcwNDI1fQ.kmi1laKJ2ITLSiVeA9v7xEzo1bYKnaQE--wIULQejF0
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyMiIsImlhdCI6MTU5NzE2NzE1MCwiZXhwIjoxNTk3MTcwNzUwfQ.j9cwEVVex3qjDibQKyCcL0-aYlpYVQUmMVz9UomHYvc
 
 ###
 
 // Get task by ID
-@taskId = 1
+@taskId = 4
 GET {{apiEndpoint}}/tasks/{{taskId}}
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyMSIsImlhdCI6MTU5NzE2NjgyNSwiZXhwIjoxNTk3MTcwNDI1fQ.kmi1laKJ2ITLSiVeA9v7xEzo1bYKnaQE--wIULQejF0
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyMiIsImlhdCI6MTU5NzE2NzE1MCwiZXhwIjoxNTk3MTcwNzUwfQ.j9cwEVVex3qjDibQKyCcL0-aYlpYVQUmMVz9UomHYvc
 
 ###
 
 // Create a task
-@taskTitle = My task
+@taskTitle = My task 2
 @taskDecription = Task desc
 POST {{apiEndpoint}}/tasks
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyMSIsImlhdCI6MTU5NzE2NjgyNSwiZXhwIjoxNTk3MTcwNDI1fQ.kmi1laKJ2ITLSiVeA9v7xEzo1bYKnaQE--wIULQejF0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyMiIsImlhdCI6MTU5NzE2NzE1MCwiZXhwIjoxNTk3MTcwNzUwfQ.j9cwEVVex3qjDibQKyCcL0-aYlpYVQUmMVz9UomHYvc
 Content-Type: application/json
 
 {
@@ -25,9 +31,11 @@ Content-Type: application/json
 ###
 
 // Delete a task
-@taskDeleteId = 2
+@taskDeleteId = 3
 
 DELETE {{apiEndpoint}}/tasks/{{taskDeleteId}}
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyMSIsImlhdCI6MTU5NzE2NjgyNSwiZXhwIjoxNTk3MTcwNDI1fQ.kmi1laKJ2ITLSiVeA9v7xEzo1bYKnaQE--wIULQejF0
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyMiIsImlhdCI6MTU5NzE2NzE1MCwiZXhwIjoxNTk3MTcwNzUwfQ.j9cwEVVex3qjDibQKyCcL0-aYlpYVQUmMVz9UomHYvc
 
 ###
 
@@ -36,6 +44,8 @@ DELETE {{apiEndpoint}}/tasks/{{taskDeleteId}}
 @taskStatus = IN_PROGRESS
 
 PATCH {{apiEndpoint}}/tasks/{{taskIdForUpdate}}/status
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyMSIsImlhdCI6MTU5NzE2NjgyNSwiZXhwIjoxNTk3MTcwNDI1fQ.kmi1laKJ2ITLSiVeA9v7xEzo1bYKnaQE--wIULQejF0
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyMiIsImlhdCI6MTU5NzE2NzE1MCwiZXhwIjoxNTk3MTcwNzUwfQ.j9cwEVVex3qjDibQKyCcL0-aYlpYVQUmMVz9UomHYvc
 Content-Type: application/json
 
 {
@@ -59,7 +69,7 @@ POST {{apiEndpoint}}/auth/signup
 Content-Type: application/json
 
 {
-  "username": "testuser",
+  "username": "testuser2",
   "password": "Welcome1!"
 }
 
@@ -71,7 +81,7 @@ POST {{apiEndpoint}}/auth/signin
 Content-Type: application/json
 
 {
-  "username": "testuser",
+  "username": "testuser2",
   "password": "Welcome1!"
 }
 
@@ -80,4 +90,4 @@ Content-Type: application/json
 // Test endpoint that requires authentication
 
 POST {{apiEndpoint}}/auth/test
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyIiwiaWF0IjoxNTk3MDYzODY4LCJleHAiOjE1OTcwNjc0Njh9.7RBFuBdTiFEC8WSn2As27lVy8W5FCacjkJtPjigkqqg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyIiwiaWF0IjoxNTk3MTY2MDQ5LCJleHAiOjE1OTcxNjk2NDl9.6VUqS3wu2vu0Hhmt4_cu8ND1ORtMVZBdCESFpE9emzE
